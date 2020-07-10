@@ -1,0 +1,1 @@
+char(n);varchar(n);binary(n);varbinary(n);tinyblob;tinytext;text(n);blob(n);mediumtext;mediumblob;longtext;longblob;bit(n);tinyint(n);bool;boolean;smallint(n);mediumint(n);int(n);integer(n);bigint(n);float(n);double(n);decimal(n);date();datettime();timestamp();time();year();
