@@ -14,6 +14,7 @@ namespace Implementacija_alata_za_modeliranje_BP
     {
         bool isFileMenuPanelOpen = false;
         string projectName = "";
+        bool isProjectMenuOpen = false;
 
         public formERADijagram( )
         {
@@ -70,6 +71,8 @@ namespace Implementacija_alata_za_modeliranje_BP
         private void lblFile_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            projectOptionsPanel.Height = 0;
+            isProjectMenuOpen = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -97,11 +100,7 @@ namespace Implementacija_alata_za_modeliranje_BP
 
         private void formERADijagram_Load(object sender, EventArgs e)
         {
-          /*  LoadProjects loadProjects = new LoadProjects();
-            foreach (var item in loadProjects.projectList())
-            {
-                treeProject.Nodes[0].Nodes.Add(item.ToString());
-            }*/
+
         }
 
 
@@ -109,12 +108,18 @@ namespace Implementacija_alata_za_modeliranje_BP
         {
             filePanel.Height = 0;
             isFileMenuPanelOpen = false;
+
+            projectOptionsPanel.Height = 0;
+            isProjectMenuOpen = false;
         }
 
         private void panelERADijagrama_Click(object sender, EventArgs e)
         {
             filePanel.Height = 0;
             isFileMenuPanelOpen = false;
+
+            projectOptionsPanel.Height = 0;
+            isProjectMenuOpen = false;
         }
 
         private void lblNewProject_Click(object sender, EventArgs e)
@@ -127,24 +132,36 @@ namespace Implementacija_alata_za_modeliranje_BP
         {
             filePanel.Height = 0;
             isFileMenuPanelOpen = false;
+
+            projectOptionsPanel.Height = 0;
+            isProjectMenuOpen = false;
         }
 
         private void panel4_Click(object sender, EventArgs e)
         {
             filePanel.Height = 0;
             isFileMenuPanelOpen = false;
+
+            projectOptionsPanel.Height = 0;
+            isProjectMenuOpen = false;
         }
 
         private void panel1_Click(object sender, EventArgs e)
         {
             filePanel.Height = 0;
             isFileMenuPanelOpen = false;
+
+            projectOptionsPanel.Height = 0;
+            isProjectMenuOpen = false;
         }
 
         private void treeProject_Click(object sender, EventArgs e)
         {
             filePanel.Height = 0;
             isFileMenuPanelOpen = false;
+
+            projectOptionsPanel.Height = 0;
+            isProjectMenuOpen = false;
         }
 
         private void formERADijagram_Activated(object sender, EventArgs e)
@@ -154,6 +171,51 @@ namespace Implementacija_alata_za_modeliranje_BP
             foreach (var item in loadProjects.projectList())
             {
                 treeProject.Nodes[0].Nodes.Add(item.ToString());
+            }
+            filePanel.Height = 0;
+            isFileMenuPanelOpen = false;
+        }
+        Point clickedPoint;
+        private void treeProject_MouseDown(object sender, MouseEventArgs e)
+        {
+            /*if (e.Button == MouseButtons.Right)
+            {
+                clickedPoint = new Point(72, e.Y);
+                timer2.Start();
+            }*/
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            projectOptionsPanel.Location = clickedPoint;
+           // projectOptionsPanel.DragOver = panelERADijagrama.;
+            if (isProjectMenuOpen)
+            {
+                projectOptionsPanel.Height -= 20;
+                if (projectOptionsPanel.Height == 0)
+                {
+                    timer2.Stop();
+                    isProjectMenuOpen = false;
+                }
+
+            }
+            else if (!isProjectMenuOpen)
+            {
+                projectOptionsPanel.Height += 20;
+                if (projectOptionsPanel.Height == 160)
+                {
+                    timer2.Stop();
+                    isProjectMenuOpen = true;
+                }
+            }
+        }
+
+        private void treeProject_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                clickedPoint = new Point(72, e.Y);
+                timer2.Start();
             }
         }
     }

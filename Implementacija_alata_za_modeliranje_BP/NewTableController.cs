@@ -10,10 +10,34 @@ namespace Implementacija_alata_za_modeliranje_BP
     {
         public string ProvjeraImena(string name)
         {
+            if(name.StartsWith(" "))
+            {
+                name= name.TrimStart();
+            }
+
             if (name.Contains(" "))
                 return name.Replace(" ","_");
             else
                 return name;
+        }
+
+        public bool CheckName(string name)
+        {
+            if(name==" ")
+            {
+                return false;
+            }
+            else
+            {
+                if (Char.IsDigit(name, 0))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
         }
 
          private List<String> ListaTipova()

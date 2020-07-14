@@ -201,10 +201,11 @@
             "year()"});
             this.txtType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtType.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtType.Location = new System.Drawing.Point(321, 52);
             this.txtType.Name = "txtType";
             this.txtType.ShortcutsEnabled = false;
-            this.txtType.Size = new System.Drawing.Size(136, 23);
+            this.txtType.Size = new System.Drawing.Size(136, 25);
             this.txtType.TabIndex = 20;
             // 
             // btnUnosStupca
@@ -330,6 +331,7 @@
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(72, 52);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";

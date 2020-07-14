@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formERADijagram));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Projects");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Projects");
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblView = new System.Windows.Forms.Label();
@@ -40,6 +40,10 @@
             this.btnMaximaze = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panelLeftProjects = new System.Windows.Forms.Panel();
+            this.projectOptionsPanel = new System.Windows.Forms.Panel();
+            this.lblNewTable = new System.Windows.Forms.Label();
+            this.lblDeleteProjectRightClick = new System.Windows.Forms.Label();
+            this.lblRenameProjectRightClick = new System.Windows.Forms.Label();
             this.filePanel = new System.Windows.Forms.Panel();
             this.lblExit = new System.Windows.Forms.Label();
             this.lblRenameProject = new System.Windows.Forms.Label();
@@ -53,9 +57,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panelERADijagrama = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelLeftProjects.SuspendLayout();
+            this.projectOptionsPanel.SuspendLayout();
             this.filePanel.SuspendLayout();
             this.panelERADijagrama.SuspendLayout();
             this.SuspendLayout();
@@ -160,6 +166,7 @@
             // panelLeftProjects
             // 
             this.panelLeftProjects.BackColor = System.Drawing.Color.Silver;
+            this.panelLeftProjects.Controls.Add(this.projectOptionsPanel);
             this.panelLeftProjects.Controls.Add(this.filePanel);
             this.panelLeftProjects.Controls.Add(this.treeProject);
             this.panelLeftProjects.Controls.Add(this.panel1);
@@ -167,9 +174,54 @@
             this.panelLeftProjects.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftProjects.Location = new System.Drawing.Point(0, 20);
             this.panelLeftProjects.Name = "panelLeftProjects";
-            this.panelLeftProjects.Size = new System.Drawing.Size(191, 572);
+            this.panelLeftProjects.Size = new System.Drawing.Size(216, 572);
             this.panelLeftProjects.TabIndex = 2;
             this.panelLeftProjects.Click += new System.EventHandler(this.panelLeftProjects_Click);
+            // 
+            // projectOptionsPanel
+            // 
+            this.projectOptionsPanel.BackColor = System.Drawing.Color.DarkGray;
+            this.projectOptionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.projectOptionsPanel.CausesValidation = false;
+            this.projectOptionsPanel.Controls.Add(this.lblNewTable);
+            this.projectOptionsPanel.Controls.Add(this.lblDeleteProjectRightClick);
+            this.projectOptionsPanel.Controls.Add(this.lblRenameProjectRightClick);
+            this.projectOptionsPanel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.projectOptionsPanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.projectOptionsPanel.Location = new System.Drawing.Point(72, 80);
+            this.projectOptionsPanel.Name = "projectOptionsPanel";
+            this.projectOptionsPanel.Size = new System.Drawing.Size(141, 0);
+            this.projectOptionsPanel.TabIndex = 4;
+            // 
+            // lblNewTable
+            // 
+            this.lblNewTable.AutoSize = true;
+            this.lblNewTable.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNewTable.Location = new System.Drawing.Point(17, 9);
+            this.lblNewTable.Name = "lblNewTable";
+            this.lblNewTable.Size = new System.Drawing.Size(72, 17);
+            this.lblNewTable.TabIndex = 0;
+            this.lblNewTable.Text = "New table";
+            // 
+            // lblDeleteProjectRightClick
+            // 
+            this.lblDeleteProjectRightClick.AutoSize = true;
+            this.lblDeleteProjectRightClick.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDeleteProjectRightClick.Location = new System.Drawing.Point(17, 95);
+            this.lblDeleteProjectRightClick.Name = "lblDeleteProjectRightClick";
+            this.lblDeleteProjectRightClick.Size = new System.Drawing.Size(98, 17);
+            this.lblDeleteProjectRightClick.TabIndex = 2;
+            this.lblDeleteProjectRightClick.Text = "Delete project";
+            // 
+            // lblRenameProjectRightClick
+            // 
+            this.lblRenameProjectRightClick.AutoSize = true;
+            this.lblRenameProjectRightClick.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRenameProjectRightClick.Location = new System.Drawing.Point(17, 52);
+            this.lblRenameProjectRightClick.Name = "lblRenameProjectRightClick";
+            this.lblRenameProjectRightClick.Size = new System.Drawing.Size(112, 17);
+            this.lblRenameProjectRightClick.TabIndex = 1;
+            this.lblRenameProjectRightClick.Text = "Rename project";
             // 
             // filePanel
             // 
@@ -247,20 +299,22 @@
             this.treeProject.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.treeProject.Location = new System.Drawing.Point(28, 23);
             this.treeProject.Name = "treeProject";
-            treeNode4.Name = "projectNode";
-            treeNode4.Text = "Projects";
+            treeNode1.Name = "projectNode";
+            treeNode1.Text = "Projects";
             this.treeProject.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode1});
             this.treeProject.Size = new System.Drawing.Size(160, 549);
             this.treeProject.TabIndex = 4;
+            this.treeProject.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeProject_NodeMouseClick);
             this.treeProject.Click += new System.EventHandler(this.treeProject_Click);
+            this.treeProject.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeProject_MouseDown);
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(28, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(163, 23);
+            this.panel1.Size = new System.Drawing.Size(188, 23);
             this.panel1.TabIndex = 4;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
@@ -288,9 +342,9 @@
             this.panelERADijagrama.BackColor = System.Drawing.Color.White;
             this.panelERADijagrama.Controls.Add(this.button1);
             this.panelERADijagrama.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelERADijagrama.Location = new System.Drawing.Point(191, 20);
+            this.panelERADijagrama.Location = new System.Drawing.Point(0, 0);
             this.panelERADijagrama.Name = "panelERADijagrama";
-            this.panelERADijagrama.Size = new System.Drawing.Size(1124, 572);
+            this.panelERADijagrama.Size = new System.Drawing.Size(1315, 592);
             this.panelERADijagrama.TabIndex = 3;
             this.panelERADijagrama.Click += new System.EventHandler(this.panelERADijagrama_Click);
             // 
@@ -299,6 +353,11 @@
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 20;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // formERADijagram
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -306,9 +365,9 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1315, 592);
-            this.Controls.Add(this.panelERADijagrama);
             this.Controls.Add(this.panelLeftProjects);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelERADijagrama);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formERADijagram";
             this.Text = "formERADijagram";
@@ -318,6 +377,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panelLeftProjects.ResumeLayout(false);
+            this.projectOptionsPanel.ResumeLayout(false);
+            this.projectOptionsPanel.PerformLayout();
             this.filePanel.ResumeLayout(false);
             this.filePanel.PerformLayout();
             this.panelERADijagrama.ResumeLayout(false);
@@ -349,5 +410,10 @@
         private System.Windows.Forms.TreeView treeProject;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel projectOptionsPanel;
+        private System.Windows.Forms.Label lblDeleteProjectRightClick;
+        private System.Windows.Forms.Label lblRenameProjectRightClick;
+        private System.Windows.Forms.Label lblNewTable;
+        private System.Windows.Forms.Timer timer2;
     }
 }

@@ -42,20 +42,21 @@ namespace Implementacija_alata_za_modeliranje_BP
         {
             NewTableController kontroler = new NewTableController();
             DataTypes dataTypes = new DataTypes();
-            dgvStupci.Rows.Add(1);
-            dgvStupci.Rows[brojAtributa].Cells[0].Value = kontroler.ProvjeraImena(txtName.Text);
-            if (kontroler.CheckDataType(txtType.Text))
+            if (kontroler.CheckName(txtName.Text) && kontroler.CheckDataType(txtType.Text))
             {
-                dgvStupci.Rows[brojAtributa].Cells[1].Value=txtType.Text;
+                dgvStupci.Rows.Add(1);
+                dgvStupci.Rows[brojAtributa].Cells[0].Value = kontroler.ProvjeraImena(txtName.Text);
+                dgvStupci.Rows[brojAtributa].Cells[1].Value = txtType.Text;
+                dgvStupci.Rows[brojAtributa].Cells[2].Value = chcboxAutoInc.Checked;
+                dgvStupci.Rows[brojAtributa].Cells[3].Value = chcBoxNotNull.Checked;
+                dgvStupci.Rows[brojAtributa].Cells[4].Value = chcoxPrimaryKey.Checked;
+                brojAtributa++;
+
             }
             else
             {
                 MessageBox.Show("Krivi unos");
             }
-            dgvStupci.Rows[brojAtributa].Cells[2].Value = chcboxAutoInc.Checked;
-            dgvStupci.Rows[brojAtributa].Cells[3].Value = chcBoxNotNull.Checked;
-            dgvStupci.Rows[brojAtributa].Cells[4].Value = chcoxPrimaryKey.Checked;
-            brojAtributa++;
             //Reset fields
             txtName.Clear();
             txtType.Clear();

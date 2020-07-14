@@ -54,7 +54,7 @@ namespace Implementacija_alata_za_modeliranje_BP
             {
                 number = int.Parse(numberInString);
             }
-            System.Console.WriteLine(number.ToString());
+            //System.Console.WriteLine(number.ToString());
             return number;
         }
         private bool Character(string dataInput)
@@ -142,8 +142,5 @@ namespace Implementacija_alata_za_modeliranje_BP
             else
                 return true;
         }
-
-
-
     }
 }
