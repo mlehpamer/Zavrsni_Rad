@@ -13,9 +13,16 @@ namespace Implementacija_alata_za_modeliranje_BP
     public partial class formNovaTablica : Form
     {
         int brojAtributa = 0;
+        string tableName1;
         public formNovaTablica()
         {
             InitializeComponent();
+        }
+
+        public formNovaTablica(string tableName)
+        {
+            InitializeComponent();
+            tableName1 = tableName;
         }
 
         private void btnUgasiFormu_Click(object sender, EventArgs e)
@@ -42,7 +49,7 @@ namespace Implementacija_alata_za_modeliranje_BP
         {
             NewTableController kontroler = new NewTableController();
             DataTypes dataTypes = new DataTypes();
-            if (kontroler.CheckName(txtName.Text) && kontroler.CheckDataType(txtType.Text))
+            if (kontroler.CheckTextInput(txtName.Text) && kontroler.CheckDataType(txtType.Text))
             {
                 dgvStupci.Rows.Add(1);
                 dgvStupci.Rows[brojAtributa].Cells[0].Value = kontroler.ProvjeraImena(txtName.Text);
@@ -70,6 +77,8 @@ namespace Implementacija_alata_za_modeliranje_BP
         private void formNovaTablica_Load(object sender, EventArgs e)
         {
             brojAtributa = 0;
+            txtTableName.Text = tableName1;
         }
+
     }
 }

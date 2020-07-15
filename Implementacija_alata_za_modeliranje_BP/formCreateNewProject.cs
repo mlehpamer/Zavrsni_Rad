@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,9 +45,11 @@ namespace Implementacija_alata_za_modeliranje_BP
 
         public void btnSaveProjectName_Click(object sender, EventArgs e)
         {
-            if (CheckTextInput(txtProjectName.Text))
+            NewTableController controller = new NewTableController();
+            if (controller.CheckTextInput(txtProjectName.Text))
             {
-                string folderName = @"C:\Users\Mihael\Desktop\IS\Zaršni rad\Implementacija_alata_za_modeliranje_BP\Implementacija_alata_za_modeliranje_BP\Projects";
+                LoadProjects loadProjects = new LoadProjects();
+                string folderName = loadProjects.CreateProjectDirectory();
                 string pathString = System.IO.Path.Combine (folderName,txtProjectName.Text.Replace(" ", "_"));
                 System.IO.Directory.CreateDirectory(pathString);
                 this.Close();               
@@ -55,26 +58,7 @@ namespace Implementacija_alata_za_modeliranje_BP
             {
                 txtProjectName.Text = "";
                 MessageBox.Show("Invalid input");
-            }
-            
-        }
-        private bool CheckTextInput(string inputText)
-        {
-            if(inputText != "" && !Char.IsWhiteSpace(inputText[0]))
-            {
-                if (Char.IsDigit(inputText[0]))
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            }          
         }
     }
 }

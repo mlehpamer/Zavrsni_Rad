@@ -53,6 +53,12 @@
     <Compile Include="formCreateNewProject.Designer.cs">
       <DependentUpon>formCreateNewProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNewTableName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewTableName.Designer.cs">
+      <DependentUpon>frmNewTableName.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadProjects.cs" />
     <Compile Include="NewTableController.cs" />
     <Compile Include="formERADijagram.cs">
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formUnosNoveTablice.resx">
       <DependentUpon>formUnosNoveTablice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewTableName.resx">
+      <DependentUpon>frmNewTableName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

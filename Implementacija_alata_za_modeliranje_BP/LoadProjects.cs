@@ -10,17 +10,43 @@ namespace Implementacija_alata_za_modeliranje_BP
     class LoadProjects
     {
 
-        public List<String> projectList()
+        public List<String> ProjectList()
         {
-            string[] subdirectories = Directory.GetDirectories(@"C:\Users\Mihael\Desktop\IS\Zaršni rad\Implementacija_alata_za_modeliranje_BP\Implementacija_alata_za_modeliranje_BP\Projects");
+            string dirPath = CreateProjectDirectory();
+            string[] subDirectories = Directory.GetDirectories(dirPath);
             List<String> projectList = new List<string>();
-            foreach (var item in subdirectories) 
+            foreach (var item in subDirectories) 
             {
                 string subFolder= item.Substring(item.LastIndexOf("\\")+1);
                 projectList.Add(subFolder);
-                //Console.WriteLine(subFolder.ToString());
             }
             return projectList;
+        }
+
+        public string CreateProjectDirectory()
+        {
+            var dirPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var dirName = $@"{dirPath}\Projects";
+            if (!Directory.Exists(dirName))
+            {
+                DirectoryInfo di = Directory.CreateDirectory(dirName);
+                return dirName;
+            }
+            return dirName;
+        }
+
+        public List<string> LoadTables(string projectName)
+        {
+            List<string> listOfTables = new List<string>();
+
+            string dirPath = CreateProjectDirectory()+"\\"+projectName;
+            string[] subDirectories = Directory.GetFiles(dirPath);
+            foreach (var item in subDirectories)
+            {
+                string subFolder = item.Substring(item.LastIndexOf("\\") +1);
+                listOfTables.Add(subFolder);
+            }
+            return listOfTables;
         }
     }
 }

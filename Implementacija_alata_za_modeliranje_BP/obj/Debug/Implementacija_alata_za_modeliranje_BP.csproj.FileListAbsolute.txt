@@ -20,3 +20,4 @@ C:\Users\Mihael\Documents\Zavrsni_Rad\Implementacija_alata_za_modeliranje_BP\obj
 C:\Users\Mihael\Documents\Zavrsni_Rad\Implementacija_alata_za_modeliranje_BP\obj\Debug\Implementacija_alata_za_modeliranje_BP.csproj.GenerateResource.cache
 C:\Users\Mihael\Documents\Zavrsni_Rad\Implementacija_alata_za_modeliranje_BP\obj\Debug\Implementacija_alata_za_modeliranje_BP.exe
 C:\Users\Mihael\Documents\Zavrsni_Rad\Implementacija_alata_za_modeliranje_BP\obj\Debug\Implementacija_alata_za_modeliranje_BP.pdb
+C:\Users\Mihael\Documents\Zavrsni_Rad\Implementacija_alata_za_modeliranje_BP\obj\Debug\Implementacija_alata_za_modeliranje_BP.frmNewTableName.resources

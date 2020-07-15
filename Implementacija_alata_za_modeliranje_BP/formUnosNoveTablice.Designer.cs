@@ -32,7 +32,7 @@
             this.btnUgasiFormu = new System.Windows.Forms.Button();
             this.lblImeForme = new System.Windows.Forms.Label();
             this.lblImeTablice = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTableName = new System.Windows.Forms.TextBox();
             this.dataTab = new System.Windows.Forms.TabPage();
             this.txtType = new System.Windows.Forms.TextBox();
             this.btnUnosStupca = new System.Windows.Forms.Button();
@@ -139,13 +139,13 @@
             this.lblImeTablice.TabIndex = 3;
             this.lblImeTablice.Text = "Table name:";
             // 
-            // textBox1
+            // txtTableName
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 107);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 31);
-            this.textBox1.TabIndex = 6;
+            this.txtTableName.Location = new System.Drawing.Point(30, 107);
+            this.txtTableName.Multiline = true;
+            this.txtTableName.Name = "txtTableName";
+            this.txtTableName.Size = new System.Drawing.Size(191, 23);
+            this.txtTableName.TabIndex = 6;
             // 
             // dataTab
             // 
@@ -733,7 +733,7 @@
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTableName);
             this.Controls.Add(this.lblImeTablice);
             this.Controls.Add(this.lblImeForme);
             this.Controls.Add(this.btnUgasiFormu);
@@ -771,7 +771,7 @@
         private System.Windows.Forms.Button btnUgasiFormu;
         private System.Windows.Forms.Label lblImeForme;
         private System.Windows.Forms.Label lblImeTablice;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTableName;
         private System.Windows.Forms.TabPage dataTab;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;

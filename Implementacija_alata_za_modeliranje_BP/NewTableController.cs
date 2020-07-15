@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Implementacija_alata_za_modeliranje_BP
@@ -40,7 +41,27 @@ namespace Implementacija_alata_za_modeliranje_BP
             }
         }
 
-         private List<String> ListaTipova()
+        public bool CheckTextInput(string inputText)
+        {
+            var regexItem = new Regex("^[a-zA-Z0-9 ]*$");
+            if (inputText != "" && !Char.IsWhiteSpace(inputText[0]) && regexItem.IsMatch(inputText))
+            {
+                if (Char.IsDigit(inputText[0]))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private List<String> ListaTipova()
          {
              string text = System.IO.File.ReadAllText(@"C:\Users\Mihael\Desktop\IS\Zaršni rad\Implementacija_alata_za_modeliranje_BP\Implementacija_alata_za_modeliranje_BP\Text files\DataTypes.txt");
             List<String> listaTipova= new List<string>();
