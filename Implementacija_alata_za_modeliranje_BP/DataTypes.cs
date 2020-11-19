@@ -18,9 +18,7 @@ namespace Implementacija_alata_za_modeliranje_BP
             catch (ArgumentOutOfRangeException)
             {
                 newData = dataInput;
-                //throw new ObjectDisposedException("Invalid Input try again");
             }
-            System.Console.WriteLine(newData);
             if (newData == "char")
                 return Character(dataInput);
             if(newData == "varchar")
@@ -54,7 +52,6 @@ namespace Implementacija_alata_za_modeliranje_BP
             {
                 number = int.Parse(numberInString);
             }
-            //System.Console.WriteLine(number.ToString());
             return number;
         }
         private bool Character(string dataInput)
@@ -106,10 +103,8 @@ namespace Implementacija_alata_za_modeliranje_BP
 
         private bool Bit(string dataInput)
         {
-            System.Console.Write("dsad");
             if (FindDataLength(dataInput) < 0 || FindDataLength(dataInput) > 64)
             {
-                System.Console.Write("dfsdf");
                 return false;
             }              
             else

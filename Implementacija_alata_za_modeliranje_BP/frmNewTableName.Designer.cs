@@ -88,6 +88,7 @@
             this.Name = "frmNewTableName";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNewTableName";
+            this.Load += new System.EventHandler(this.frmNewTableName_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmNewTableName_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmNewTableName_MouseMove);
             this.ResumeLayout(false);

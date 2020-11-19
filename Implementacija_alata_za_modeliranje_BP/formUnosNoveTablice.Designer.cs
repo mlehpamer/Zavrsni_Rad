@@ -29,12 +29,41 @@
         private void InitializeComponent()
         {
             this.formNovaTablicaPozadina = new System.Windows.Forms.Button();
-            this.btnUgasiFormu = new System.Windows.Forms.Button();
             this.lblImeForme = new System.Windows.Forms.Label();
             this.lblImeTablice = new System.Windows.Forms.Label();
             this.txtTableName = new System.Windows.Forms.TextBox();
+            this.btnSpremi = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
+            this.foreignTab = new System.Windows.Forms.TabPage();
+            this.btnDeleteForeignKey = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblFKOnAtribut = new System.Windows.Forms.Label();
+            this.cmbSelectedTablePK = new System.Windows.Forms.ComboBox();
+            this.cmbCurrentTableAtributes = new System.Windows.Forms.ComboBox();
+            this.cmbFKTableName = new System.Windows.Forms.ComboBox();
+            this.v = new System.Windows.Forms.Button();
+            this.dgvForeignKeys = new System.Windows.Forms.DataGridView();
+            this.targetTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fromAtribut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toAtribute = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblForeignTable = new System.Windows.Forms.Label();
+            this.lblForeignName = new System.Windows.Forms.Label();
+            this.txtForeignName = new System.Windows.Forms.TextBox();
+            this.keysTab = new System.Windows.Forms.TabPage();
+            this.cmbColumnAtribut = new System.Windows.Forms.ComboBox();
+            this.btnKeysAdd = new System.Windows.Forms.Button();
+            this.lblKeysTabColumnName = new System.Windows.Forms.Label();
+            this.chcboxKeysPrimary = new System.Windows.Forms.CheckBox();
+            this.dgvKeys = new System.Windows.Forms.DataGridView();
+            this.columnAtributName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnAtributType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnAtributPK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblKeyNameTable = new System.Windows.Forms.Label();
+            this.txtKeyNameTable = new System.Windows.Forms.TextBox();
             this.dataTab = new System.Windows.Forms.TabPage();
+            this.btnNewColumnRemove = new System.Windows.Forms.Button();
             this.txtType = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.btnUnosStupca = new System.Windows.Forms.Button();
             this.dgvStupci = new System.Windows.Forms.DataGridView();
             this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,48 +75,16 @@
             this.chcboxUnique = new System.Windows.Forms.CheckBox();
             this.chcboxAutoInc = new System.Windows.Forms.CheckBox();
             this.chcBoxNotNull = new System.Windows.Forms.CheckBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.keysTab = new System.Windows.Forms.TabPage();
-            this.btnKeysAdd = new System.Windows.Forms.Button();
-            this.lblKeysTabColumnName = new System.Windows.Forms.Label();
-            this.txtkeysColumn = new System.Windows.Forms.TextBox();
-            this.chcboxKeysPrimary = new System.Windows.Forms.CheckBox();
-            this.dgvKeys = new System.Windows.Forms.DataGridView();
-            this.lblKeyName = new System.Windows.Forms.Label();
-            this.txtKeyName = new System.Windows.Forms.TextBox();
-            this.indicesTab = new System.Windows.Forms.TabPage();
-            this.btnIndiciesAdd = new System.Windows.Forms.Button();
-            this.lblIndicieColumn = new System.Windows.Forms.Label();
-            this.txtIndiciesColumn = new System.Windows.Forms.TextBox();
-            this.chckBoxUnique = new System.Windows.Forms.CheckBox();
-            this.dgvIndicies = new System.Windows.Forms.DataGridView();
-            this.lblIndicesName = new System.Windows.Forms.Label();
-            this.txtIndiciesName = new System.Windows.Forms.TextBox();
-            this.foreignTab = new System.Windows.Forms.TabPage();
-            this.cmbOnDelete = new System.Windows.Forms.ComboBox();
-            this.cmbOnUpdate = new System.Windows.Forms.ComboBox();
-            this.lblForeignDelete = new System.Windows.Forms.Label();
-            this.lblForeignUpdate = new System.Windows.Forms.Label();
-            this.v = new System.Windows.Forms.Button();
-            this.dgvForeignKeys = new System.Windows.Forms.DataGridView();
-            this.lblForeignTable = new System.Windows.Forms.Label();
-            this.txtForeignTable = new System.Windows.Forms.TextBox();
-            this.lblForeignName = new System.Windows.Forms.Label();
-            this.txtForeignName = new System.Windows.Forms.TextBox();
-            this.btnSpremi = new System.Windows.Forms.Button();
-            this.btnOdustani = new System.Windows.Forms.Button();
+            this.foreignTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvForeignKeys)).BeginInit();
+            this.keysTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKeys)).BeginInit();
             this.dataTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStupci)).BeginInit();
             this.tabControl.SuspendLayout();
-            this.keysTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKeys)).BeginInit();
-            this.indicesTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIndicies)).BeginInit();
-            this.foreignTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvForeignKeys)).BeginInit();
             this.SuspendLayout();
             // 
             // formNovaTablicaPozadina
@@ -99,23 +96,6 @@
             this.formNovaTablicaPozadina.Size = new System.Drawing.Size(1178, 590);
             this.formNovaTablicaPozadina.TabIndex = 0;
             this.formNovaTablicaPozadina.UseVisualStyleBackColor = false;
-            // 
-            // btnUgasiFormu
-            // 
-            this.btnUgasiFormu.AutoEllipsis = true;
-            this.btnUgasiFormu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnUgasiFormu.BackColor = System.Drawing.Color.Gray;
-            this.btnUgasiFormu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnUgasiFormu.FlatAppearance.BorderSize = 0;
-            this.btnUgasiFormu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUgasiFormu.Location = new System.Drawing.Point(1130, 20);
-            this.btnUgasiFormu.Margin = new System.Windows.Forms.Padding(0);
-            this.btnUgasiFormu.Name = "btnUgasiFormu";
-            this.btnUgasiFormu.Size = new System.Drawing.Size(41, 39);
-            this.btnUgasiFormu.TabIndex = 1;
-            this.btnUgasiFormu.Text = "X";
-            this.btnUgasiFormu.UseVisualStyleBackColor = false;
-            this.btnUgasiFormu.Click += new System.EventHandler(this.btnUgasiFormu_Click);
             // 
             // lblImeForme
             // 
@@ -141,31 +121,359 @@
             // 
             // txtTableName
             // 
+            this.txtTableName.Enabled = false;
             this.txtTableName.Location = new System.Drawing.Point(30, 107);
             this.txtTableName.Multiline = true;
             this.txtTableName.Name = "txtTableName";
             this.txtTableName.Size = new System.Drawing.Size(191, 23);
             this.txtTableName.TabIndex = 6;
             // 
+            // btnSpremi
+            // 
+            this.btnSpremi.Location = new System.Drawing.Point(28, 509);
+            this.btnSpremi.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSpremi.Name = "btnSpremi";
+            this.btnSpremi.Size = new System.Drawing.Size(81, 35);
+            this.btnSpremi.TabIndex = 18;
+            this.btnSpremi.Text = "Save";
+            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
+            // 
+            // btnOdustani
+            // 
+            this.btnOdustani.Location = new System.Drawing.Point(174, 509);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(81, 35);
+            this.btnOdustani.TabIndex = 19;
+            this.btnOdustani.Text = "Cancel";
+            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            // 
+            // foreignTab
+            // 
+            this.foreignTab.BackColor = System.Drawing.Color.Gray;
+            this.foreignTab.Controls.Add(this.btnDeleteForeignKey);
+            this.foreignTab.Controls.Add(this.label1);
+            this.foreignTab.Controls.Add(this.lblFKOnAtribut);
+            this.foreignTab.Controls.Add(this.cmbSelectedTablePK);
+            this.foreignTab.Controls.Add(this.cmbCurrentTableAtributes);
+            this.foreignTab.Controls.Add(this.cmbFKTableName);
+            this.foreignTab.Controls.Add(this.v);
+            this.foreignTab.Controls.Add(this.dgvForeignKeys);
+            this.foreignTab.Controls.Add(this.lblForeignTable);
+            this.foreignTab.Controls.Add(this.lblForeignName);
+            this.foreignTab.Controls.Add(this.txtForeignName);
+            this.foreignTab.Location = new System.Drawing.Point(4, 28);
+            this.foreignTab.Name = "foreignTab";
+            this.foreignTab.Padding = new System.Windows.Forms.Padding(3);
+            this.foreignTab.Size = new System.Drawing.Size(779, 433);
+            this.foreignTab.TabIndex = 4;
+            this.foreignTab.Text = "Foreign Key";
+            // 
+            // btnDeleteForeignKey
+            // 
+            this.btnDeleteForeignKey.AutoEllipsis = true;
+            this.btnDeleteForeignKey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDeleteForeignKey.BackColor = System.Drawing.Color.Gray;
+            this.btnDeleteForeignKey.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeleteForeignKey.FlatAppearance.BorderSize = 0;
+            this.btnDeleteForeignKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDeleteForeignKey.Location = new System.Drawing.Point(671, 147);
+            this.btnDeleteForeignKey.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDeleteForeignKey.Name = "btnDeleteForeignKey";
+            this.btnDeleteForeignKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDeleteForeignKey.Size = new System.Drawing.Size(43, 43);
+            this.btnDeleteForeignKey.TabIndex = 53;
+            this.btnDeleteForeignKey.Text = "-";
+            this.btnDeleteForeignKey.UseVisualStyleBackColor = false;
+            this.btnDeleteForeignKey.Click += new System.EventHandler(this.btnDeleteForeignKey_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Gray;
+            this.label1.Enabled = false;
+            this.label1.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(346, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 24);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "To:";
+            // 
+            // lblFKOnAtribut
+            // 
+            this.lblFKOnAtribut.BackColor = System.Drawing.Color.Gray;
+            this.lblFKOnAtribut.Enabled = false;
+            this.lblFKOnAtribut.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFKOnAtribut.Location = new System.Drawing.Point(346, 33);
+            this.lblFKOnAtribut.Name = "lblFKOnAtribut";
+            this.lblFKOnAtribut.Size = new System.Drawing.Size(113, 24);
+            this.lblFKOnAtribut.TabIndex = 51;
+            this.lblFKOnAtribut.Text = "From:";
+            // 
+            // cmbSelectedTablePK
+            // 
+            this.cmbSelectedTablePK.FormattingEnabled = true;
+            this.cmbSelectedTablePK.Location = new System.Drawing.Point(478, 88);
+            this.cmbSelectedTablePK.Name = "cmbSelectedTablePK";
+            this.cmbSelectedTablePK.Size = new System.Drawing.Size(121, 24);
+            this.cmbSelectedTablePK.TabIndex = 50;
+            // 
+            // cmbCurrentTableAtributes
+            // 
+            this.cmbCurrentTableAtributes.FormattingEnabled = true;
+            this.cmbCurrentTableAtributes.Location = new System.Drawing.Point(478, 34);
+            this.cmbCurrentTableAtributes.Name = "cmbCurrentTableAtributes";
+            this.cmbCurrentTableAtributes.Size = new System.Drawing.Size(121, 24);
+            this.cmbCurrentTableAtributes.TabIndex = 49;
+            // 
+            // cmbFKTableName
+            // 
+            this.cmbFKTableName.FormattingEnabled = true;
+            this.cmbFKTableName.Location = new System.Drawing.Point(162, 89);
+            this.cmbFKTableName.Name = "cmbFKTableName";
+            this.cmbFKTableName.Size = new System.Drawing.Size(121, 24);
+            this.cmbFKTableName.TabIndex = 48;
+            this.cmbFKTableName.SelectionChangeCommitted += new System.EventHandler(this.cmbFKTableName_SelectionChangeCommitted);
+            // 
+            // v
+            // 
+            this.v.AutoEllipsis = true;
+            this.v.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.v.BackColor = System.Drawing.Color.Gray;
+            this.v.Cursor = System.Windows.Forms.Cursors.Default;
+            this.v.FlatAppearance.BorderSize = 0;
+            this.v.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.v.Location = new System.Drawing.Point(599, 147);
+            this.v.Margin = new System.Windows.Forms.Padding(0);
+            this.v.Name = "v";
+            this.v.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.v.Size = new System.Drawing.Size(43, 43);
+            this.v.TabIndex = 43;
+            this.v.Text = "+";
+            this.v.UseVisualStyleBackColor = false;
+            this.v.Click += new System.EventHandler(this.v_Click);
+            // 
+            // dgvForeignKeys
+            // 
+            this.dgvForeignKeys.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvForeignKeys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvForeignKeys.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.targetTable,
+            this.fromAtribut,
+            this.toAtribute});
+            this.dgvForeignKeys.Location = new System.Drawing.Point(34, 205);
+            this.dgvForeignKeys.Name = "dgvForeignKeys";
+            this.dgvForeignKeys.RowHeadersWidth = 51;
+            this.dgvForeignKeys.RowTemplate.Height = 24;
+            this.dgvForeignKeys.Size = new System.Drawing.Size(680, 209);
+            this.dgvForeignKeys.TabIndex = 11;
+            // 
+            // targetTable
+            // 
+            this.targetTable.HeaderText = "Target Table";
+            this.targetTable.MinimumWidth = 6;
+            this.targetTable.Name = "targetTable";
+            // 
+            // fromAtribut
+            // 
+            this.fromAtribut.HeaderText = "From atribute(FK)";
+            this.fromAtribut.MinimumWidth = 6;
+            this.fromAtribut.Name = "fromAtribut";
+            // 
+            // toAtribute
+            // 
+            this.toAtribute.HeaderText = "To atribute(PK)";
+            this.toAtribute.MinimumWidth = 6;
+            this.toAtribute.Name = "toAtribute";
+            // 
+            // lblForeignTable
+            // 
+            this.lblForeignTable.BackColor = System.Drawing.Color.Gray;
+            this.lblForeignTable.Enabled = false;
+            this.lblForeignTable.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblForeignTable.Location = new System.Drawing.Point(30, 89);
+            this.lblForeignTable.Name = "lblForeignTable";
+            this.lblForeignTable.Size = new System.Drawing.Size(113, 24);
+            this.lblForeignTable.TabIndex = 10;
+            this.lblForeignTable.Text = "Table name:";
+            // 
+            // lblForeignName
+            // 
+            this.lblForeignName.BackColor = System.Drawing.Color.Gray;
+            this.lblForeignName.Enabled = false;
+            this.lblForeignName.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblForeignName.Location = new System.Drawing.Point(30, 35);
+            this.lblForeignName.Name = "lblForeignName";
+            this.lblForeignName.Size = new System.Drawing.Size(113, 24);
+            this.lblForeignName.TabIndex = 8;
+            this.lblForeignName.Text = "Name:";
+            // 
+            // txtForeignName
+            // 
+            this.txtForeignName.Location = new System.Drawing.Point(162, 35);
+            this.txtForeignName.Name = "txtForeignName";
+            this.txtForeignName.Size = new System.Drawing.Size(121, 23);
+            this.txtForeignName.TabIndex = 7;
+            // 
+            // keysTab
+            // 
+            this.keysTab.BackColor = System.Drawing.Color.Gray;
+            this.keysTab.Controls.Add(this.cmbColumnAtribut);
+            this.keysTab.Controls.Add(this.btnKeysAdd);
+            this.keysTab.Controls.Add(this.lblKeysTabColumnName);
+            this.keysTab.Controls.Add(this.chcboxKeysPrimary);
+            this.keysTab.Controls.Add(this.dgvKeys);
+            this.keysTab.Controls.Add(this.lblKeyNameTable);
+            this.keysTab.Controls.Add(this.txtKeyNameTable);
+            this.keysTab.Location = new System.Drawing.Point(4, 28);
+            this.keysTab.Name = "keysTab";
+            this.keysTab.Padding = new System.Windows.Forms.Padding(3);
+            this.keysTab.Size = new System.Drawing.Size(779, 433);
+            this.keysTab.TabIndex = 2;
+            this.keysTab.Text = "Keys";
+            // 
+            // cmbColumnAtribut
+            // 
+            this.cmbColumnAtribut.FormattingEnabled = true;
+            this.cmbColumnAtribut.Location = new System.Drawing.Point(531, 56);
+            this.cmbColumnAtribut.Name = "cmbColumnAtribut";
+            this.cmbColumnAtribut.Size = new System.Drawing.Size(139, 24);
+            this.cmbColumnAtribut.TabIndex = 37;
+            // 
+            // btnKeysAdd
+            // 
+            this.btnKeysAdd.AutoEllipsis = true;
+            this.btnKeysAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnKeysAdd.BackColor = System.Drawing.Color.Gray;
+            this.btnKeysAdd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnKeysAdd.FlatAppearance.BorderSize = 0;
+            this.btnKeysAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKeysAdd.Location = new System.Drawing.Point(636, 119);
+            this.btnKeysAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKeysAdd.Name = "btnKeysAdd";
+            this.btnKeysAdd.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnKeysAdd.Size = new System.Drawing.Size(43, 43);
+            this.btnKeysAdd.TabIndex = 35;
+            this.btnKeysAdd.Text = "+";
+            this.btnKeysAdd.UseVisualStyleBackColor = false;
+            this.btnKeysAdd.Click += new System.EventHandler(this.btnKeysAdd_Click);
+            // 
+            // lblKeysTabColumnName
+            // 
+            this.lblKeysTabColumnName.BackColor = System.Drawing.Color.Gray;
+            this.lblKeysTabColumnName.Enabled = false;
+            this.lblKeysTabColumnName.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKeysTabColumnName.Location = new System.Drawing.Point(443, 63);
+            this.lblKeysTabColumnName.Name = "lblKeysTabColumnName";
+            this.lblKeysTabColumnName.Size = new System.Drawing.Size(82, 29);
+            this.lblKeysTabColumnName.TabIndex = 12;
+            this.lblKeysTabColumnName.Text = "Column:";
+            // 
+            // chcboxKeysPrimary
+            // 
+            this.chcboxKeysPrimary.AutoSize = true;
+            this.chcboxKeysPrimary.Checked = true;
+            this.chcboxKeysPrimary.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chcboxKeysPrimary.Location = new System.Drawing.Point(155, 119);
+            this.chcboxKeysPrimary.Name = "chcboxKeysPrimary";
+            this.chcboxKeysPrimary.Size = new System.Drawing.Size(110, 20);
+            this.chcboxKeysPrimary.TabIndex = 10;
+            this.chcboxKeysPrimary.Text = "Primary key";
+            this.chcboxKeysPrimary.UseVisualStyleBackColor = true;
+            // 
+            // dgvKeys
+            // 
+            this.dgvKeys.AllowUserToAddRows = false;
+            this.dgvKeys.AllowUserToResizeColumns = false;
+            this.dgvKeys.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKeys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKeys.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnAtributName,
+            this.columnAtributType,
+            this.columnAtributPK});
+            this.dgvKeys.Location = new System.Drawing.Point(41, 197);
+            this.dgvKeys.Name = "dgvKeys";
+            this.dgvKeys.RowHeadersWidth = 51;
+            this.dgvKeys.RowTemplate.Height = 24;
+            this.dgvKeys.Size = new System.Drawing.Size(679, 174);
+            this.dgvKeys.TabIndex = 9;
+            // 
+            // columnAtributName
+            // 
+            this.columnAtributName.HeaderText = "Name";
+            this.columnAtributName.MinimumWidth = 6;
+            this.columnAtributName.Name = "columnAtributName";
+            // 
+            // columnAtributType
+            // 
+            this.columnAtributType.HeaderText = "Type";
+            this.columnAtributType.MinimumWidth = 6;
+            this.columnAtributType.Name = "columnAtributType";
+            // 
+            // columnAtributPK
+            // 
+            this.columnAtributPK.HeaderText = "PK";
+            this.columnAtributPK.MinimumWidth = 6;
+            this.columnAtributPK.Name = "columnAtributPK";
+            // 
+            // lblKeyNameTable
+            // 
+            this.lblKeyNameTable.BackColor = System.Drawing.Color.Gray;
+            this.lblKeyNameTable.Enabled = false;
+            this.lblKeyNameTable.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKeyNameTable.Location = new System.Drawing.Point(27, 56);
+            this.lblKeyNameTable.Name = "lblKeyNameTable";
+            this.lblKeyNameTable.Size = new System.Drawing.Size(122, 36);
+            this.lblKeyNameTable.TabIndex = 8;
+            this.lblKeyNameTable.Text = "Table Name:";
+            // 
+            // txtKeyNameTable
+            // 
+            this.txtKeyNameTable.Enabled = false;
+            this.txtKeyNameTable.Location = new System.Drawing.Point(155, 56);
+            this.txtKeyNameTable.Name = "txtKeyNameTable";
+            this.txtKeyNameTable.Size = new System.Drawing.Size(139, 23);
+            this.txtKeyNameTable.TabIndex = 7;
+            // 
             // dataTab
             // 
             this.dataTab.BackColor = System.Drawing.Color.Gray;
+            this.dataTab.Controls.Add(this.btnNewColumnRemove);
             this.dataTab.Controls.Add(this.txtType);
+            this.dataTab.Controls.Add(this.txtName);
             this.dataTab.Controls.Add(this.btnUnosStupca);
             this.dataTab.Controls.Add(this.dgvStupci);
             this.dataTab.Controls.Add(this.chcoxPrimaryKey);
             this.dataTab.Controls.Add(this.chcboxUnique);
             this.dataTab.Controls.Add(this.chcboxAutoInc);
             this.dataTab.Controls.Add(this.chcBoxNotNull);
-            this.dataTab.Controls.Add(this.txtName);
             this.dataTab.Controls.Add(this.lblName);
             this.dataTab.Controls.Add(this.lblType);
             this.dataTab.Location = new System.Drawing.Point(4, 28);
             this.dataTab.Name = "dataTab";
             this.dataTab.Padding = new System.Windows.Forms.Padding(3);
-            this.dataTab.Size = new System.Drawing.Size(754, 433);
+            this.dataTab.Size = new System.Drawing.Size(779, 433);
             this.dataTab.TabIndex = 1;
             this.dataTab.Text = "New column";
+            // 
+            // btnNewColumnRemove
+            // 
+            this.btnNewColumnRemove.AutoEllipsis = true;
+            this.btnNewColumnRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewColumnRemove.BackColor = System.Drawing.Color.Gray;
+            this.btnNewColumnRemove.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnNewColumnRemove.FlatAppearance.BorderSize = 0;
+            this.btnNewColumnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNewColumnRemove.Location = new System.Drawing.Point(709, 113);
+            this.btnNewColumnRemove.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNewColumnRemove.Name = "btnNewColumnRemove";
+            this.btnNewColumnRemove.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnNewColumnRemove.Size = new System.Drawing.Size(43, 43);
+            this.btnNewColumnRemove.TabIndex = 35;
+            this.btnNewColumnRemove.Text = "-";
+            this.btnNewColumnRemove.UseVisualStyleBackColor = false;
+            this.btnNewColumnRemove.Click += new System.EventHandler(this.btnNewColumnRemove_Click);
             // 
             // txtType
             // 
@@ -208,6 +516,15 @@
             this.txtType.Size = new System.Drawing.Size(136, 25);
             this.txtType.TabIndex = 20;
             // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(72, 52);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(136, 23);
+            this.txtName.TabIndex = 19;
+            // 
             // btnUnosStupca
             // 
             this.btnUnosStupca.AutoEllipsis = true;
@@ -216,7 +533,7 @@
             this.btnUnosStupca.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnUnosStupca.FlatAppearance.BorderSize = 0;
             this.btnUnosStupca.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUnosStupca.Location = new System.Drawing.Point(647, 113);
+            this.btnUnosStupca.Location = new System.Drawing.Point(641, 113);
             this.btnUnosStupca.Margin = new System.Windows.Forms.Padding(0);
             this.btnUnosStupca.Name = "btnUnosStupca";
             this.btnUnosStupca.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -245,7 +562,7 @@
             this.dgvStupci.ReadOnly = true;
             this.dgvStupci.RowHeadersWidth = 51;
             this.dgvStupci.RowTemplate.Height = 24;
-            this.dgvStupci.Size = new System.Drawing.Size(675, 204);
+            this.dgvStupci.Size = new System.Drawing.Size(733, 204);
             this.dgvStupci.TabIndex = 33;
             // 
             // columnName
@@ -329,15 +646,6 @@
             this.chcBoxNotNull.Text = "Not Null";
             this.chcBoxNotNull.UseVisualStyleBackColor = true;
             // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(72, 52);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(136, 23);
-            this.txtName.TabIndex = 19;
-            // 
             // lblName
             // 
             this.lblName.BackColor = System.Drawing.Color.Gray;
@@ -366,7 +674,6 @@
             this.tabControl.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl.Controls.Add(this.dataTab);
             this.tabControl.Controls.Add(this.keysTab);
-            this.tabControl.Controls.Add(this.indicesTab);
             this.tabControl.Controls.Add(this.foreignTab);
             this.tabControl.Font = new System.Drawing.Font("Lucida Fax", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -374,353 +681,8 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(10);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(762, 465);
+            this.tabControl.Size = new System.Drawing.Size(787, 465);
             this.tabControl.TabIndex = 17;
-            // 
-            // keysTab
-            // 
-            this.keysTab.BackColor = System.Drawing.Color.Gray;
-            this.keysTab.Controls.Add(this.btnKeysAdd);
-            this.keysTab.Controls.Add(this.lblKeysTabColumnName);
-            this.keysTab.Controls.Add(this.txtkeysColumn);
-            this.keysTab.Controls.Add(this.chcboxKeysPrimary);
-            this.keysTab.Controls.Add(this.dgvKeys);
-            this.keysTab.Controls.Add(this.lblKeyName);
-            this.keysTab.Controls.Add(this.txtKeyName);
-            this.keysTab.Location = new System.Drawing.Point(4, 28);
-            this.keysTab.Name = "keysTab";
-            this.keysTab.Padding = new System.Windows.Forms.Padding(3);
-            this.keysTab.Size = new System.Drawing.Size(754, 433);
-            this.keysTab.TabIndex = 2;
-            this.keysTab.Text = "Keys";
-            // 
-            // btnKeysAdd
-            // 
-            this.btnKeysAdd.AutoEllipsis = true;
-            this.btnKeysAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnKeysAdd.BackColor = System.Drawing.Color.Gray;
-            this.btnKeysAdd.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnKeysAdd.FlatAppearance.BorderSize = 0;
-            this.btnKeysAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnKeysAdd.Location = new System.Drawing.Point(636, 119);
-            this.btnKeysAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKeysAdd.Name = "btnKeysAdd";
-            this.btnKeysAdd.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnKeysAdd.Size = new System.Drawing.Size(43, 43);
-            this.btnKeysAdd.TabIndex = 35;
-            this.btnKeysAdd.Text = "+";
-            this.btnKeysAdd.UseVisualStyleBackColor = false;
-            // 
-            // lblKeysTabColumnName
-            // 
-            this.lblKeysTabColumnName.BackColor = System.Drawing.Color.Gray;
-            this.lblKeysTabColumnName.Enabled = false;
-            this.lblKeysTabColumnName.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKeysTabColumnName.Location = new System.Drawing.Point(443, 63);
-            this.lblKeysTabColumnName.Name = "lblKeysTabColumnName";
-            this.lblKeysTabColumnName.Size = new System.Drawing.Size(82, 29);
-            this.lblKeysTabColumnName.TabIndex = 12;
-            this.lblKeysTabColumnName.Text = "Column:";
-            // 
-            // txtkeysColumn
-            // 
-            this.txtkeysColumn.Location = new System.Drawing.Point(540, 56);
-            this.txtkeysColumn.Name = "txtkeysColumn";
-            this.txtkeysColumn.Size = new System.Drawing.Size(139, 23);
-            this.txtkeysColumn.TabIndex = 11;
-            // 
-            // chcboxKeysPrimary
-            // 
-            this.chcboxKeysPrimary.AutoSize = true;
-            this.chcboxKeysPrimary.Location = new System.Drawing.Point(104, 119);
-            this.chcboxKeysPrimary.Name = "chcboxKeysPrimary";
-            this.chcboxKeysPrimary.Size = new System.Drawing.Size(110, 20);
-            this.chcboxKeysPrimary.TabIndex = 10;
-            this.chcboxKeysPrimary.Text = "Primary key";
-            this.chcboxKeysPrimary.UseVisualStyleBackColor = true;
-            // 
-            // dgvKeys
-            // 
-            this.dgvKeys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKeys.Location = new System.Drawing.Point(41, 197);
-            this.dgvKeys.Name = "dgvKeys";
-            this.dgvKeys.RowHeadersWidth = 51;
-            this.dgvKeys.RowTemplate.Height = 24;
-            this.dgvKeys.Size = new System.Drawing.Size(679, 174);
-            this.dgvKeys.TabIndex = 9;
-            // 
-            // lblKeyName
-            // 
-            this.lblKeyName.BackColor = System.Drawing.Color.Gray;
-            this.lblKeyName.Enabled = false;
-            this.lblKeyName.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKeyName.Location = new System.Drawing.Point(27, 56);
-            this.lblKeyName.Name = "lblKeyName";
-            this.lblKeyName.Size = new System.Drawing.Size(61, 26);
-            this.lblKeyName.TabIndex = 8;
-            this.lblKeyName.Text = "Name:";
-            // 
-            // txtKeyName
-            // 
-            this.txtKeyName.Location = new System.Drawing.Point(104, 53);
-            this.txtKeyName.Name = "txtKeyName";
-            this.txtKeyName.Size = new System.Drawing.Size(139, 23);
-            this.txtKeyName.TabIndex = 7;
-            // 
-            // indicesTab
-            // 
-            this.indicesTab.BackColor = System.Drawing.Color.Gray;
-            this.indicesTab.Controls.Add(this.btnIndiciesAdd);
-            this.indicesTab.Controls.Add(this.lblIndicieColumn);
-            this.indicesTab.Controls.Add(this.txtIndiciesColumn);
-            this.indicesTab.Controls.Add(this.chckBoxUnique);
-            this.indicesTab.Controls.Add(this.dgvIndicies);
-            this.indicesTab.Controls.Add(this.lblIndicesName);
-            this.indicesTab.Controls.Add(this.txtIndiciesName);
-            this.indicesTab.Location = new System.Drawing.Point(4, 28);
-            this.indicesTab.Name = "indicesTab";
-            this.indicesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.indicesTab.Size = new System.Drawing.Size(754, 433);
-            this.indicesTab.TabIndex = 3;
-            this.indicesTab.Text = "Indices";
-            // 
-            // btnIndiciesAdd
-            // 
-            this.btnIndiciesAdd.AutoEllipsis = true;
-            this.btnIndiciesAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnIndiciesAdd.BackColor = System.Drawing.Color.Gray;
-            this.btnIndiciesAdd.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnIndiciesAdd.FlatAppearance.BorderSize = 0;
-            this.btnIndiciesAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIndiciesAdd.Location = new System.Drawing.Point(636, 119);
-            this.btnIndiciesAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.btnIndiciesAdd.Name = "btnIndiciesAdd";
-            this.btnIndiciesAdd.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnIndiciesAdd.Size = new System.Drawing.Size(43, 43);
-            this.btnIndiciesAdd.TabIndex = 42;
-            this.btnIndiciesAdd.Text = "+";
-            this.btnIndiciesAdd.UseVisualStyleBackColor = false;
-            // 
-            // lblIndicieColumn
-            // 
-            this.lblIndicieColumn.BackColor = System.Drawing.Color.Gray;
-            this.lblIndicieColumn.Enabled = false;
-            this.lblIndicieColumn.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIndicieColumn.Location = new System.Drawing.Point(443, 63);
-            this.lblIndicieColumn.Name = "lblIndicieColumn";
-            this.lblIndicieColumn.Size = new System.Drawing.Size(82, 29);
-            this.lblIndicieColumn.TabIndex = 12;
-            this.lblIndicieColumn.Text = "Column:";
-            // 
-            // txtIndiciesColumn
-            // 
-            this.txtIndiciesColumn.Location = new System.Drawing.Point(540, 56);
-            this.txtIndiciesColumn.Name = "txtIndiciesColumn";
-            this.txtIndiciesColumn.Size = new System.Drawing.Size(139, 23);
-            this.txtIndiciesColumn.TabIndex = 40;
-            // 
-            // chckBoxUnique
-            // 
-            this.chckBoxUnique.AutoSize = true;
-            this.chckBoxUnique.Location = new System.Drawing.Point(104, 119);
-            this.chckBoxUnique.Name = "chckBoxUnique";
-            this.chckBoxUnique.Size = new System.Drawing.Size(80, 20);
-            this.chckBoxUnique.TabIndex = 39;
-            this.chckBoxUnique.Text = "Unique";
-            this.chckBoxUnique.UseVisualStyleBackColor = true;
-            // 
-            // dgvIndicies
-            // 
-            this.dgvIndicies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIndicies.Location = new System.Drawing.Point(41, 197);
-            this.dgvIndicies.Name = "dgvIndicies";
-            this.dgvIndicies.RowHeadersWidth = 51;
-            this.dgvIndicies.RowTemplate.Height = 24;
-            this.dgvIndicies.Size = new System.Drawing.Size(679, 174);
-            this.dgvIndicies.TabIndex = 38;
-            // 
-            // lblIndicesName
-            // 
-            this.lblIndicesName.BackColor = System.Drawing.Color.Gray;
-            this.lblIndicesName.Enabled = false;
-            this.lblIndicesName.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIndicesName.Location = new System.Drawing.Point(27, 56);
-            this.lblIndicesName.Name = "lblIndicesName";
-            this.lblIndicesName.Size = new System.Drawing.Size(61, 26);
-            this.lblIndicesName.TabIndex = 37;
-            this.lblIndicesName.Text = "Name:";
-            // 
-            // txtIndiciesName
-            // 
-            this.txtIndiciesName.Location = new System.Drawing.Point(104, 53);
-            this.txtIndiciesName.Name = "txtIndiciesName";
-            this.txtIndiciesName.Size = new System.Drawing.Size(139, 23);
-            this.txtIndiciesName.TabIndex = 36;
-            // 
-            // foreignTab
-            // 
-            this.foreignTab.BackColor = System.Drawing.Color.Gray;
-            this.foreignTab.Controls.Add(this.cmbOnDelete);
-            this.foreignTab.Controls.Add(this.cmbOnUpdate);
-            this.foreignTab.Controls.Add(this.lblForeignDelete);
-            this.foreignTab.Controls.Add(this.lblForeignUpdate);
-            this.foreignTab.Controls.Add(this.v);
-            this.foreignTab.Controls.Add(this.dgvForeignKeys);
-            this.foreignTab.Controls.Add(this.lblForeignTable);
-            this.foreignTab.Controls.Add(this.txtForeignTable);
-            this.foreignTab.Controls.Add(this.lblForeignName);
-            this.foreignTab.Controls.Add(this.txtForeignName);
-            this.foreignTab.Location = new System.Drawing.Point(4, 28);
-            this.foreignTab.Name = "foreignTab";
-            this.foreignTab.Padding = new System.Windows.Forms.Padding(3);
-            this.foreignTab.Size = new System.Drawing.Size(754, 433);
-            this.foreignTab.TabIndex = 4;
-            this.foreignTab.Text = "Foreign Key";
-            // 
-            // cmbOnDelete
-            // 
-            this.cmbOnDelete.AutoCompleteCustomSource.AddRange(new string[] {
-            "No action",
-            "Restrict",
-            "Set null",
-            "Set default",
-            "Cascade"});
-            this.cmbOnDelete.FormattingEnabled = true;
-            this.cmbOnDelete.Items.AddRange(new object[] {
-            "No action",
-            "Restrict",
-            "Set null",
-            "Set default",
-            "Cascade"});
-            this.cmbOnDelete.Location = new System.Drawing.Point(506, 73);
-            this.cmbOnDelete.Name = "cmbOnDelete";
-            this.cmbOnDelete.Size = new System.Drawing.Size(102, 24);
-            this.cmbOnDelete.TabIndex = 47;
-            // 
-            // cmbOnUpdate
-            // 
-            this.cmbOnUpdate.AutoCompleteCustomSource.AddRange(new string[] {
-            "No action",
-            "Restrict",
-            "Set null",
-            "Set default",
-            "Cascade"});
-            this.cmbOnUpdate.FormattingEnabled = true;
-            this.cmbOnUpdate.Items.AddRange(new object[] {
-            "No action",
-            "Restrict",
-            "Set null",
-            "Set default",
-            "Cascade"});
-            this.cmbOnUpdate.Location = new System.Drawing.Point(361, 73);
-            this.cmbOnUpdate.Name = "cmbOnUpdate";
-            this.cmbOnUpdate.Size = new System.Drawing.Size(102, 24);
-            this.cmbOnUpdate.TabIndex = 46;
-            // 
-            // lblForeignDelete
-            // 
-            this.lblForeignDelete.BackColor = System.Drawing.Color.Gray;
-            this.lblForeignDelete.Enabled = false;
-            this.lblForeignDelete.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblForeignDelete.Location = new System.Drawing.Point(502, 34);
-            this.lblForeignDelete.Name = "lblForeignDelete";
-            this.lblForeignDelete.Size = new System.Drawing.Size(113, 24);
-            this.lblForeignDelete.TabIndex = 45;
-            this.lblForeignDelete.Text = "On delete:";
-            // 
-            // lblForeignUpdate
-            // 
-            this.lblForeignUpdate.BackColor = System.Drawing.Color.Gray;
-            this.lblForeignUpdate.Enabled = false;
-            this.lblForeignUpdate.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblForeignUpdate.Location = new System.Drawing.Point(366, 34);
-            this.lblForeignUpdate.Name = "lblForeignUpdate";
-            this.lblForeignUpdate.Size = new System.Drawing.Size(113, 24);
-            this.lblForeignUpdate.TabIndex = 44;
-            this.lblForeignUpdate.Text = "On update:";
-            // 
-            // v
-            // 
-            this.v.AutoEllipsis = true;
-            this.v.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.v.BackColor = System.Drawing.Color.Gray;
-            this.v.Cursor = System.Windows.Forms.Cursors.Default;
-            this.v.FlatAppearance.BorderSize = 0;
-            this.v.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.v.Location = new System.Drawing.Point(671, 136);
-            this.v.Margin = new System.Windows.Forms.Padding(0);
-            this.v.Name = "v";
-            this.v.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.v.Size = new System.Drawing.Size(43, 43);
-            this.v.TabIndex = 43;
-            this.v.Text = "+";
-            this.v.UseVisualStyleBackColor = false;
-            // 
-            // dgvForeignKeys
-            // 
-            this.dgvForeignKeys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvForeignKeys.Location = new System.Drawing.Point(34, 205);
-            this.dgvForeignKeys.Name = "dgvForeignKeys";
-            this.dgvForeignKeys.RowHeadersWidth = 51;
-            this.dgvForeignKeys.RowTemplate.Height = 24;
-            this.dgvForeignKeys.Size = new System.Drawing.Size(680, 209);
-            this.dgvForeignKeys.TabIndex = 11;
-            // 
-            // lblForeignTable
-            // 
-            this.lblForeignTable.BackColor = System.Drawing.Color.Gray;
-            this.lblForeignTable.Enabled = false;
-            this.lblForeignTable.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblForeignTable.Location = new System.Drawing.Point(30, 101);
-            this.lblForeignTable.Name = "lblForeignTable";
-            this.lblForeignTable.Size = new System.Drawing.Size(113, 24);
-            this.lblForeignTable.TabIndex = 10;
-            this.lblForeignTable.Text = "Table name:";
-            // 
-            // txtForeignTable
-            // 
-            this.txtForeignTable.Location = new System.Drawing.Point(171, 101);
-            this.txtForeignTable.Name = "txtForeignTable";
-            this.txtForeignTable.Size = new System.Drawing.Size(112, 23);
-            this.txtForeignTable.TabIndex = 9;
-            // 
-            // lblForeignName
-            // 
-            this.lblForeignName.BackColor = System.Drawing.Color.Gray;
-            this.lblForeignName.Enabled = false;
-            this.lblForeignName.Font = new System.Drawing.Font("Marlett", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblForeignName.Location = new System.Drawing.Point(30, 35);
-            this.lblForeignName.Name = "lblForeignName";
-            this.lblForeignName.Size = new System.Drawing.Size(113, 24);
-            this.lblForeignName.TabIndex = 8;
-            this.lblForeignName.Text = "Name:";
-            // 
-            // txtForeignName
-            // 
-            this.txtForeignName.Location = new System.Drawing.Point(171, 35);
-            this.txtForeignName.Name = "txtForeignName";
-            this.txtForeignName.Size = new System.Drawing.Size(112, 23);
-            this.txtForeignName.TabIndex = 7;
-            // 
-            // btnSpremi
-            // 
-            this.btnSpremi.Location = new System.Drawing.Point(28, 509);
-            this.btnSpremi.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(81, 35);
-            this.btnSpremi.TabIndex = 18;
-            this.btnSpremi.Text = "Save";
-            this.btnSpremi.UseVisualStyleBackColor = true;
-            // 
-            // btnOdustani
-            // 
-            this.btnOdustani.Location = new System.Drawing.Point(174, 509);
-            this.btnOdustani.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(81, 35);
-            this.btnOdustani.TabIndex = 19;
-            this.btnOdustani.Text = "Cancel";
-            this.btnOdustani.UseVisualStyleBackColor = true;
             // 
             // formNovaTablica
             // 
@@ -736,7 +698,6 @@
             this.Controls.Add(this.txtTableName);
             this.Controls.Add(this.lblImeTablice);
             this.Controls.Add(this.lblImeForme);
-            this.Controls.Add(this.btnUgasiFormu);
             this.Controls.Add(this.formNovaTablicaPozadina);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -747,19 +708,16 @@
             this.Load += new System.EventHandler(this.formNovaTablica_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formNovaTablica_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formNovaTablica_MouseMove);
+            this.foreignTab.ResumeLayout(false);
+            this.foreignTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvForeignKeys)).EndInit();
+            this.keysTab.ResumeLayout(false);
+            this.keysTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKeys)).EndInit();
             this.dataTab.ResumeLayout(false);
             this.dataTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStupci)).EndInit();
             this.tabControl.ResumeLayout(false);
-            this.keysTab.ResumeLayout(false);
-            this.keysTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKeys)).EndInit();
-            this.indicesTab.ResumeLayout(false);
-            this.indicesTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIndicies)).EndInit();
-            this.foreignTab.ResumeLayout(false);
-            this.foreignTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvForeignKeys)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -768,56 +726,55 @@
         #endregion
 
         private System.Windows.Forms.Button formNovaTablicaPozadina;
-        private System.Windows.Forms.Button btnUgasiFormu;
         private System.Windows.Forms.Label lblImeForme;
         private System.Windows.Forms.Label lblImeTablice;
         private System.Windows.Forms.TextBox txtTableName;
-        private System.Windows.Forms.TabPage dataTab;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.TabPage keysTab;
-        private System.Windows.Forms.TabPage indicesTab;
-        private System.Windows.Forms.TabPage foreignTab;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.Label lblKeyName;
-        private System.Windows.Forms.TextBox txtKeyName;
-        private System.Windows.Forms.CheckBox chcboxAutoInc;
-        private System.Windows.Forms.CheckBox chcBoxNotNull;
-        private System.Windows.Forms.CheckBox chcboxUnique;
-        private System.Windows.Forms.Button btnUnosStupca;
-        private System.Windows.Forms.DataGridView dgvStupci;
-        private System.Windows.Forms.CheckBox chcoxPrimaryKey;
-        private System.Windows.Forms.Button btnKeysAdd;
-        private System.Windows.Forms.Label lblKeysTabColumnName;
-        private System.Windows.Forms.TextBox txtkeysColumn;
-        private System.Windows.Forms.CheckBox chcboxKeysPrimary;
-        private System.Windows.Forms.DataGridView dgvKeys;
-        private System.Windows.Forms.Button btnIndiciesAdd;
-        private System.Windows.Forms.Label lblIndicieColumn;
-        private System.Windows.Forms.TextBox txtIndiciesColumn;
-        private System.Windows.Forms.CheckBox chckBoxUnique;
-        private System.Windows.Forms.DataGridView dgvIndicies;
-        private System.Windows.Forms.Label lblIndicesName;
-        private System.Windows.Forms.TextBox txtIndiciesName;
-        private System.Windows.Forms.DataGridView dgvForeignKeys;
-        private System.Windows.Forms.Label lblForeignTable;
-        private System.Windows.Forms.TextBox txtForeignTable;
-        private System.Windows.Forms.Label lblForeignName;
-        private System.Windows.Forms.TextBox txtForeignName;
-        private System.Windows.Forms.ComboBox cmbOnDelete;
-        private System.Windows.Forms.ComboBox cmbOnUpdate;
-        private System.Windows.Forms.Label lblForeignDelete;
-        private System.Windows.Forms.Label lblForeignUpdate;
-        private System.Windows.Forms.Button v;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.TabPage foreignTab;
+        private System.Windows.Forms.Button btnDeleteForeignKey;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFKOnAtribut;
+        private System.Windows.Forms.ComboBox cmbSelectedTablePK;
+        private System.Windows.Forms.ComboBox cmbCurrentTableAtributes;
+        private System.Windows.Forms.ComboBox cmbFKTableName;
+        private System.Windows.Forms.Button v;
+        private System.Windows.Forms.DataGridView dgvForeignKeys;
+        private System.Windows.Forms.DataGridViewTextBoxColumn targetTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fromAtribut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toAtribute;
+        private System.Windows.Forms.Label lblForeignTable;
+        private System.Windows.Forms.Label lblForeignName;
+        private System.Windows.Forms.TextBox txtForeignName;
+        private System.Windows.Forms.TabPage keysTab;
+        private System.Windows.Forms.ComboBox cmbColumnAtribut;
+        private System.Windows.Forms.Button btnKeysAdd;
+        private System.Windows.Forms.Label lblKeysTabColumnName;
+        private System.Windows.Forms.CheckBox chcboxKeysPrimary;
+        private System.Windows.Forms.DataGridView dgvKeys;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnAtributName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnAtributType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnAtributPK;
+        private System.Windows.Forms.Label lblKeyNameTable;
+        private System.Windows.Forms.TextBox txtKeyNameTable;
+        private System.Windows.Forms.TabPage dataTab;
+        private System.Windows.Forms.Button btnNewColumnRemove;
         private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btnUnosStupca;
+        private System.Windows.Forms.DataGridView dgvStupci;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnType;
         private System.Windows.Forms.DataGridViewCheckBoxColumn columnAutoInc;
         private System.Windows.Forms.DataGridViewCheckBoxColumn columnNotNull;
         private System.Windows.Forms.DataGridViewCheckBoxColumn columnPrimaryKey;
+        private System.Windows.Forms.CheckBox chcoxPrimaryKey;
+        private System.Windows.Forms.CheckBox chcboxUnique;
+        private System.Windows.Forms.CheckBox chcboxAutoInc;
+        private System.Windows.Forms.CheckBox chcBoxNotNull;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.TabControl tabControl;
     }
 }
 

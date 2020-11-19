@@ -88,6 +88,7 @@
             this.Name = "formCreateNewProject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formCreateNewProject";
+            this.Load += new System.EventHandler(this.formCreateNewProject_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formCreateNewProject_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formCreateNewProject_MouseMove);
             this.ResumeLayout(false);
